@@ -1,0 +1,6 @@
+entity.plant.add_form:
+  route_name: 'entity.plant.add_form'
+  title: 'Add Plant'
+  appears_on:
+    - entity.plant.collection
+

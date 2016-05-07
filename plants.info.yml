@@ -1,0 +1,5 @@
+name: plants
+type: module
+description: Configuration Entity of Plant Types
+core: 8.x
+package: gardnr

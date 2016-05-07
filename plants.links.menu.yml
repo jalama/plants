@@ -1,0 +1,8 @@
+# Plant menu items definition
+entity.plant.collection:
+  title: 'Plant'
+  route_name: entity.plant.collection
+  description: 'List Plant (bundles)'
+  parent: system.admin_structure
+  weight: 99
+
