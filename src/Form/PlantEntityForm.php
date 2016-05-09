@@ -177,6 +177,11 @@ class PlantEntityForm extends EntityForm {
       '#title' => $this->t('Distance between the hills'),
       '#description' => $this->t('In inches'),
       '#default_value' => $plant->get('hill_dist'),
+      '#states' => array(
+	'visible' => array(   // action to take
+	  ':input[name="hill"]' => array('checked' => TRUE),
+	),
+      ),
     );
 
     $form['raised_rows'] = array(
