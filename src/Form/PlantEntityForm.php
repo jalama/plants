@@ -91,7 +91,8 @@ class PlantEntityForm extends EntityForm {
       '#title' => $this->t('Soil PH'),
       '#description' => $this->t('Ideal soil PH, value betwee 0 - 14'),
       '#default_value' => $plant->get('soil_ph'),
-      '#options' => range(0, 14),
+      '#min' => 0,
+      '#max' => 14,
     );
 
     $form['exposure'] = array(
@@ -109,7 +110,8 @@ class PlantEntityForm extends EntityForm {
       '#title' => $this->t('Maximum Daily Temperautre'),
       '#description' => $this->t('Value between 0 and 100'),
       '#default_value' => $plant->get('max_daily_temp'),
-      '#options' => range(0, 100),
+      '#min' => 0,
+      '#max' => 100,
     );
 
     $form['min_daily_temp'] = array(
@@ -118,7 +120,8 @@ class PlantEntityForm extends EntityForm {
       '#title' => $this->t('Minimum Daily Temperautre'),
       '#description' => $this->t('Value between 0 and 100'),
       '#default_value' => $plant->get('min_daily_temp'),
-      '#options' => range(0, 100),
+      '#min' => 0,
+      '#max' => 100,
     );
 
     $form['avg_day_temp'] = array(
@@ -127,7 +130,8 @@ class PlantEntityForm extends EntityForm {
       '#title' => $this->t('Average Daytime Temperautre'),
       '#description' => $this->t('Value between 0 and 100'),
       '#default_value' => $plant->get('avg_day_temp'),
-      '#options' => range(0, 100),
+      '#min' => 0,
+      '#max' => 100,
     );
 
     $form['avg_night_temp'] = array(
@@ -136,7 +140,8 @@ class PlantEntityForm extends EntityForm {
       '#title' => $this->t('Average Nighttime Temperature'),
       '#description' => $this->t('Value between 0 and 100'),
       '#default_value' => $plant->get('avg_night_temp'),
-      '#options' => range(0, 100),
+      '#min' => 0,
+      '#max' => 100,
     );
 
     $form['diff_daily_temp'] = array(
@@ -145,7 +150,8 @@ class PlantEntityForm extends EntityForm {
       '#title' => $this->t('Difference in Daily Temperature'),
       '#description' => $this->t('Value between 0 and 100'),
       '#default_value' => $plant->get('diff_daily_temp'),
-      '#options' => range(0, 100),
+      '#min' => 0,
+      '#max' => 100,
     );
 
     $form['row_dist'] = array(
