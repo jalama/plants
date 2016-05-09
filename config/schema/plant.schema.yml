@@ -10,3 +10,36 @@ plants.plant.*:
       label: 'Label'
     uuid:
       type: string
+    sow_inside:
+      type: integer
+      label: 'Sow Inside'
+    sow_outside:
+      type: integer
+      label: 'Sow Outside'
+    maturity:
+      type: integer
+      label: 'Maturity'
+    soil_temp:
+      type: integer
+      label: 'Soil Temperature'
+    soil_ph:
+      type: float
+      label: 'Soil PH'
+    exposure:
+      type: integer
+      label: 'Sun Exposure'
+    max_daily_temp:
+      type: integer
+      label: 'Maximum Daily Temperature'
+    min_daily_temp:
+      type: integer
+      label: 'Minumum Daily Temperature'
+    avg_day_temp:
+      type: integer
+      label: 'Average Daytime Temperature'
+    avg_night_temp:
+      type: integer
+      label: 'Average Nighttime Temperature'
+    diff_daily_temp:
+      type: integer
+      label: 'Difference in Daily Temperature'

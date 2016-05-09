@@ -54,4 +54,80 @@ class PlantEntity extends ConfigEntityBase implements PlantEntityInterface {
    */
   protected $label;
 
+  /**
+   * The Plant Sow Inside time before frist frost.
+   *
+   * @var integer
+   */
+  protected $sow_inside;
+
+  /**
+   * The Plant Sow Outside time before frist frost.
+   *
+   * @var integer
+   */
+  protected $sow_outside;
+
+  /**
+   * Time until maturity.
+   *
+   * @var integer
+   */
+  protected $maturity;
+
+  /**
+   * Ideal Soil temperature.
+   *
+   * @var integer
+   */
+  protected $soil_temp;
+
+  /**
+   * Ideal Soil PH.
+   *
+   * @var float
+   */
+  protected $soil_ph;
+
+  /**
+   * Ideal Sun Exposure.
+   *
+   * @var string
+   */
+  protected $exposure;
+
+  /**
+   * Maximum Daily Temperature.
+   *
+   * @var integer
+   */
+  protected $max_daily_temp;
+
+  /**
+   * Minumum Daily Temperature.
+   *
+   * @var integer
+   */
+  protected $min_daily_temp;
+
+  /**
+   * Average Daytime Temperature.
+   *
+   * @var integer
+   */
+  protected $avg_day_temp;
+
+  /**
+   * Average Nightime Temperature.
+   *
+   * @var integer
+   */
+  protected $avg_night_temp;
+
+  /**
+   * Daily Temperture Diffeerence.
+   *
+   * @var integer
+   */
+  protected $diff_daily_temp;
 }
