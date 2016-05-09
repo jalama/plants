@@ -4,6 +4,7 @@ namespace Drupal\plants\Form;
 
 use Drupal\Core\Entity\EntityForm;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 
 /**
  * Class PlantEntityForm.
@@ -49,13 +50,14 @@ class PlantEntityForm extends EntityForm {
       'grasses' => $this->t('Grasses'),
       'parsely' => $this->t('Parsley'),
     );
+    $url = Url::fromUri('http://www.groworganic.com/organic-gardening/articles/quick-guide-to-vegetable-families-for-crop-rotation', ['attributes' => ['target' => '_blank']]);
     $form['family'] = array(
       '#type' => 'select',
       '#empty_option' => $this->t('-none-'),
       '#title' => $this->t('Plant Family'),
       '#default_value' => $plant->get('family'),
       '#options' => $family,
-      '#description' => $this->t('refer to http://www.groworganic.com/organic-gardening/articles/quick-guide-to-vegetable-families-for-crop-rotation'),
+      '#description' => \Drupal::l($this->t('Click for sample familes'), $url),
     );
 
     $form['sow_inside'] = array(
