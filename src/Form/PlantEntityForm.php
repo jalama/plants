@@ -185,9 +185,39 @@ class PlantEntityForm extends EntityForm {
       '#default_value' => $plant->get('raised_rows'),
     );
 
+    $form['cover_crop'] = array(
+      '#type' => 'checkbox',
+      '#title' => $this->t('Is this a cover crop'),
+      '#default_value' => $plant->get('cover_crop'),
+    );
+
+    $plants =$this->getPlants();
+    if (count($plants)) {
+      $form['companions'] = array(
+	'#type' => 'select',
+	'#empty_option' => $this->t('-none-'),
+	'#title' => $this->t('Companion Plants'),
+	'#multiple' => TRUE,
+	'#default_value' => $plant->get('companions'),
+	'#options' => $plants,
+	'#description' => $this->t('Companions plants that grow well in conjunction with this plant'),
+      );
+    }
     return $form;
   }
 
+  private function getPlants() {
+    $plants = [];
+    $plant = $this->entity;
+    $all_plants = $plant->loadMultiple();
+    if ($plant->id() !== null) {
+      unset($all_plants[$plant->id()]);
+    }
+    foreach($all_plants as $id => $class) {
+      $plants[$id] = $class->label();
+    }
+    return $plants;
+  }
   /**
    * {@inheritdoc}
    */
