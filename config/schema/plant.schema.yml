@@ -8,6 +8,9 @@ plants.plant.*:
     label:
       type: label
       label: 'Label'
+    family:
+      type: string
+      label: 'Family'
     uuid:
       type: string
     sow_inside:
@@ -43,3 +46,22 @@ plants.plant.*:
     diff_daily_temp:
       type: integer
       label: 'Difference in Daily Temperature'
+    row_dist:
+      type: integer
+      label: 'Distance between Rows'
+    seed_dist:
+      type: integer
+      label: 'Distance between Seeds'
+    hill:
+      type: boolean
+      label: 'Plant in hills'
+    hill_dist:
+      type: integer
+      label: 'distance between hills'
+    raised_rows:
+      type: boolean
+      label: 'Plant in raised rows'
+    cover_crop:
+      type: string
+      label: 'Cover crop'
+ 

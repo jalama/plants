@@ -37,6 +37,27 @@ class PlantEntityForm extends EntityForm {
       '#disabled' => !$plant->isNew(),
     );
 
+    $family = array(
+      'nightshades' => $this->t('Nightshades'),
+      'morning_glory' => $this->t('Morning Glory'),
+      'melons_squash' => $this->t('Melons & Squash'),
+      'goosefoot' => $this->t('Goosefoot'),
+      'sunflower' => $this->t('Sunflower'),
+      'brassicas' => $this->t('Cole or Brassicas'),
+      'onions' => $this->t('Onions'),
+      'peas' => $this->t('Peas'),
+      'grasses' => $this->t('Grasses'),
+      'parsely' => $this->t('Parsley'),
+    );
+    $form['family'] = array(
+      '#type' => 'select',
+      '#empty_option' => $this->t('-none-'),
+      '#title' => $this->t('Plant Family'),
+      '#default_value' => $plant->get('family'),
+      '#options' => $family,
+      '#description' => $this->t('refer to http://www.groworganic.com/organic-gardening/articles/quick-guide-to-vegetable-families-for-crop-rotation'),
+    );
+
     $form['sow_inside'] = array(
       '#type' => 'number',
       '#title' => $this->t('Sow inside date'),
@@ -75,6 +96,7 @@ class PlantEntityForm extends EntityForm {
 
     $form['exposure'] = array(
       '#type' => 'select',
+      '#empty_option' => $this->t('-none-'),
       '#title' => $this->t('Exposure'),
       '#description' => $this->t('Ideal sun exposure'),
       '#default_value' => $plant->get('exposure'),
@@ -111,7 +133,7 @@ class PlantEntityForm extends EntityForm {
     $form['avg_night_temp'] = array(
       '#type' => 'textfield',
       '#maxlength' => 3,
-      '#title' => $this->t('Average Nighttime Temperautre'),
+      '#title' => $this->t('Average Nighttime Temperature'),
       '#description' => $this->t('Value between 0 and 100'),
       '#default_value' => $plant->get('avg_night_temp'),
       '#options' => range(0, 100),
@@ -120,10 +142,47 @@ class PlantEntityForm extends EntityForm {
     $form['diff_daily_temp'] = array(
       '#type' => 'textfield',
       '#maxlength' => 3,
-      '#title' => $this->t('Diference in Daily Temperautre'),
+      '#title' => $this->t('Difference in Daily Temperature'),
       '#description' => $this->t('Value between 0 and 100'),
       '#default_value' => $plant->get('diff_daily_temp'),
       '#options' => range(0, 100),
+    );
+
+    $form['row_dist'] = array(
+      '#type' => 'number',
+      '#maxlength' => 3,
+      '#title' => $this->t('Distance between the rows'),
+      '#description' => $this->t('In inches'),
+      '#default_value' => $plant->get('row_dist'),
+    );
+
+    $form['seed_dist'] = array(
+      '#type' => 'number',
+      '#maxlength' => 3,
+      '#title' => $this->t('Distance between the seeds'),
+      '#description' => $this->t('In inches'),
+      '#default_value' => $plant->get('seed_dist'),
+    );
+
+    $form['hill'] = array(
+      '#type' => 'checkbox',
+      '#title' => $this->t('Hill the plant?'),
+      '#description' => $this->t('Does this plant prefer hills'),
+      '#default_value' => $plant->get('hill'),
+    );
+
+    $form['hill_dist'] = array(
+      '#type' => 'number',
+      '#maxlength' => 3,
+      '#title' => $this->t('Distance between the hills'),
+      '#description' => $this->t('In inches'),
+      '#default_value' => $plant->get('hill_dist'),
+    );
+
+    $form['raised_rows'] = array(
+      '#type' => 'checkbox',
+      '#title' => $this->t('Plant on raised rows?'),
+      '#default_value' => $plant->get('raised_rows'),
     );
 
     return $form;

@@ -55,6 +55,13 @@ class PlantEntity extends ConfigEntityBase implements PlantEntityInterface {
   protected $label;
 
   /**
+   * The Plant family.
+   *
+   * @var string
+   */
+  protected $family;
+
+  /**
    * The Plant Sow Inside time before frist frost.
    *
    * @var integer
@@ -130,4 +137,46 @@ class PlantEntity extends ConfigEntityBase implements PlantEntityInterface {
    * @var integer
    */
   protected $diff_daily_temp;
+
+  /**
+   * Distance between rows.
+   *
+   * @var integer
+   */
+  protected $row_dist;
+
+  /**
+   * Distance between seeds.
+   *
+   * @var integer
+   */
+  protected $seed_dist;
+
+  /**
+   * Does plant prefer being planted on hills.
+   *
+   * @var boolean
+   */
+  protected $hill;
+
+  /**
+   *  Distance between hills.
+   *
+   * @var integer
+   */
+  protected $hill_dist;
+
+  /**
+   *  Plant with raised rows.
+   *
+   * @var boolean
+   */
+  protected $raised_rows;
+
+  /**
+   *  Potential Cover crops.
+   *
+   * @var boolean
+   */
+  protected $cover_crop;
 }
