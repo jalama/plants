@@ -1,0 +1,4 @@
+administer plants:
+  title: 'Administer Plant entities'
+  description: 'Add/Remove/Edit Plant entity records'
+  restrict access: TRUE
